@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Передовые SEO мета-теги для вывода сайта в топ поисковиков -->
+    <!-- СЕО МЕТА-ТЕГИ: Для вывода сайта в топ Google и Яндекса -->
     <title>DanuMes — Глобальный мессенджер нового поколения | Официальный сайт</title>
     <meta name="description" content="Официальный сайт DanuMes. Быстрый, безопасный и автономный мессенджер с премиальным Bento-дизайном. Личные чаты и группы без ограничений.">
     <meta name="keywords" content="DanuMes, мессенджер, официальный сайт, bento чат, глобальный мессенджер, быстрый чат, войти в веб версию">
     <meta name="robots" content="index, follow">
     
     <style>
-        /* Дизайн-система топ-уровня: Max, Apple, Tailwind Space */
+        /* Дизайн-система: Max, Apple, Tailwind Space */
         :root {
-            --bg-base: #030712;
+            --bg-base: #020408;
             --card-glass: rgba(17, 24, 39, 0.45);
             --card-border: rgba(255, 255, 255, 0.06);
             --accent-glow: rgba(99, 102, 241, 0.15);
@@ -78,8 +78,8 @@
             z-index: 10;
         }
 
-        .logo {
-            font-size: 28px;
+        .logo-header {
+            font-size: 24px;
             font-weight: 900;
             letter-spacing: -1px;
             background: var(--max-gradient);
@@ -108,12 +108,12 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Главный блок презентации (Hero) */
+        /* Секция Hero с выравниванием по центру */
         .hero {
             max-width: 1140px;
             width: 100%;
             margin: 0 auto;
-            padding: 60px 24px;
+            padding: 80px 24px 60px 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -135,36 +135,37 @@
             text-transform: uppercase;
         }
 
-        .main-title {
-            font-size: 68px;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            max-width: 850px;
-            margin-bottom: 20px;
-        }
-
-        .main-title span {
+        /* ОГРОМНЫЙ ЛОГОТИП СТРОГО ПОСЕРЕДИНЕ */
+        .main-logo-centered {
+            font-size: 96px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -3px;
             background: var(--max-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.2));
         }
 
-        .main-subtitle {
-            font-size: 20px;
+        /* АККУРАТНЫЙ НОРМАЛЬНЫЙ ШРИФТ ДЛЯ ПОДРОБНОСТЕЙ */
+        .main-details-text {
+            font-size: 16px;
+            font-weight: 400;
             color: var(--text-gray);
-            max-width: 600px;
+            max-width: 580px;
             line-height: 1.6;
-            margin-bottom: 44px;
+            margin-bottom: 40px;
+            letter-spacing: -0.1px;
         }
 
-        /* СВЕТЯЩАЯСЯ КНОПКА ВХОДА В ВЕБ-ВЕРСИЮ */
+        /* Кнопка входа */
         .btn-web-version {
             display: inline-flex;
             align-items: center;
             gap: 12px;
             padding: 18px 46px;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: var(--text-white);
             background: var(--btn-gradient);
@@ -174,6 +175,7 @@
             text-decoration: none;
             box-shadow: 0 10px 35px rgba(37, 99, 235, 0.35);
             transition: transform 0.2s, box-shadow 0.3s, filter 0.3s;
+            margin-bottom: 40px;
         }
 
         .btn-web-version:hover {
@@ -197,7 +199,7 @@
         .bento-container {
             max-width: 1140px;
             width: 100%;
-            margin: 40px auto 80px auto;
+            margin: 20px auto 80px auto;
             padding: 0 24px;
             position: relative;
             z-index: 5;
@@ -234,20 +236,20 @@
         }
 
         .card-header-block h3 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
 
         .card-header-block p {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-gray);
             line-height: 1.5;
             margin-bottom: 24px;
         }
 
-        /* Интерактивный живой макет чата */
+        /* Живой макет чата */
         .live-chat-mockup {
             width: 100%;
             height: 190px;
@@ -340,7 +342,6 @@
             border-bottom-right-radius: 2px;
         }
 
-        /* Маленькие SVG-иконки для карточек */
         .bento-icon {
             color: #6366f1;
             margin-bottom: 16px;
@@ -350,7 +351,23 @@
             color: #a855f7;
         }
 
-        /* Футер (Подвал) */
+        .bento-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--max-gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .bento-card:hover::after {
+            opacity: 1;
+        }
+
+        /* Подвал */
         footer {
             width: 100%;
             max-width: 1140px;
@@ -366,12 +383,17 @@
             z-index: 10;
         }
 
-        /* Идеальная адаптивность для экранов телефонов */
+        .footer-brand {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Адаптивность */
         @media (max-width: 900px) {
             .bento-grid { grid-template-columns: 1fr; }
             .bento-card.wide { grid-column: span 1; }
-            .main-title { font-size: 42px; letter-spacing: -1px; }
-            .main-subtitle { font-size: 17px; }
+            .main-logo-centered { font-size: 64px; }
+            .main-details-text { font-size: 14px; padding: 0 10px; }
             header { padding: 20px; }
         }
     </style>
@@ -383,19 +405,23 @@
 
     <!-- Шапка -->
     <header>
-        <a href="#" class="logo">DanuMes</a>
-        <a href="https://onrender.com" target="_blank" class="btn-top-launch">Открыть в браузере</a>
+        <a href="#" class="logo-header">DanuMes</a>
+        <a href="https://onrender.com" target="_blank" class="btn-top-launch">Открыть Web</a>
     </header>
 
     <!-- Главная секция -->
     <main class="hero">
-        <div class="promo-badge">Обновление 2.0 уже доступно</div>
-        <h1 class="main-title">Все ваши чаты и группы в едином <span>цифровом Bento пространстве</span></h1>
-        <p class="main-subtitle">
-            Современная платформа для общения без лишней нагрузки. Мгновенные сообщения, гибкие настройки групп и абсолютная автономность сессий.
+        <div class="promo-badge">Платформа v2.0</div>
+        
+        <!-- ЦЕНТРАЛЬНЫЙ КРУПНЫЙ ЛОГОТИП -->
+        <h1 class="main-logo-centered">DanuMes</h1>
+        
+        <!-- ПОДРОБНОСТИ НОРМАЛЬНЫМ НЕБОЛЬШИМ ШРИФТОМ -->
+        <p class="main-details-text">
+            Глобальная экосистема для мгновенного обмена сообщениями и координации команд. Автономная архитектура на базе Bento Dark Mode со стопроцентной защитой сессий и пакетными HTTP-интервалами. Создавайте группы, общайтесь без ограничений и контролируйте свои данные.
         </p>
 
-        <!-- ГЛАВНАЯ КНОПКА: Перенаправляет на ваше рабочее приложение на Render -->
+        <!-- КНОПКА ВХОДА В ВЕБ-ВЕРСИЮ -->
         <a href="https://onrender.com" target="_blank" class="btn-web-version">
             <span>Войти в веб-версию</span>
             <svg viewBox="0 0 24 24">
@@ -404,18 +430,17 @@
         </a>
     </main>
 
-    <!-- Презентация Bento Grid возможностей -->
+    <!-- Презентация Bento Grid -->
     <section class="bento-container">
         <div class="bento-grid">
             
-            <!-- Большой интерактивный bento-блок с макетом мессенджера -->
+            <!-- Живая Bento-модель чата -->
             <div class="bento-card wide">
                 <div class="card-header-block">
-                    <h3>Премиальный Bento дизайн</h3>
-                    <p>Интерфейс спроектирован с жесткой фиксацией высоты рабочих областей. Поле ввода сообщений и боковые панели никогда не съезжают и не обрезаются экраном смартфона, создавая ощущение нативного приложения.</p>
+                    <h3>Интерфейс Bento Dark Mode</h3>
+                    <p>Структура экранов спроектирована с жесткой фиксацией высоты. Поля ввода сообщений и боковые панели зафиксированы строго по сетке, поэтому интерфейс не сдвигается на экранах смартфонов.</p>
                 </div>
                 
-                <!-- Живая модель чата DanuMes -->
                 <div class="live-chat-mockup">
                     <div class="mock-sidebar">
                         <div class="mock-title">DanuMes</div>
@@ -445,12 +470,12 @@
             <div class="bento-card">
                 <div class="card-header-block">
                     <svg class="bento-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    <h3>Защита от выкидывания</h3>
+                    <h3>Защита сессий</h3>
                     <p>Интеллектуальная сессионная память. Логин и пароль надежно закрепляются на устройстве пользователя. Контейнер бэкенда автоматически восстановит профиль при любом перезапуске.</p>
                 </div>
             </div>
 
-            <!-- Оптимизация сетевого кода -->
+            <!-- Оптимизация -->
             <div class="bento-card wide">
                 <div class="card-header-block">
                     <svg class="bento-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
@@ -462,9 +487,9 @@
         </div>
     </section>
 
-    <!-- Подвал сайта -->
+    <!-- Подвал -->
     <footer>
-        <div><span style="font-weight:700; color:#fff;">DanuMes Ecosystem</span> — Свобода общения.</div>
+        <div><span class="footer-brand">DanuMes Ecosystem</span> — Свобода общения.</div>
         <div>2026 Все права защищены</div>
     </footer>
 
