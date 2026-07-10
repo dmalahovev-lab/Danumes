@@ -1,497 +1,254 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- СЕО МЕТА-ТЕГИ: Для вывода сайта в топ Google и Яндекса -->
-    <title>DanuMes — Глобальный мессенджер нового поколения | Официальный сайт</title>
-    <meta name="description" content="Официальный сайт DanuMes. Быстрый, безопасный и автономный мессенджер с премиальным Bento-дизайном. Личные чаты и группы без ограничений.">
-    <meta name="keywords" content="DanuMes, мессенджер, официальный сайт, bento чат, глобальный мессенджер, быстрый чат, войти в веб версию">
-    <meta name="robots" content="index, follow">
-    
-    <style>
-        /* Дизайн-система: Max, Apple, Tailwind Space */
-        :root {
-            --bg-base: #030712;
-            --card-glass: rgba(17, 24, 39, 0.45);
-            --card-border: rgba(255, 255, 255, 0.06);
-            --accent-glow: rgba(99, 102, 241, 0.15);
-            --text-white: #ffffff;
-            --text-gray: #9ca3af;
-            --max-gradient: linear-gradient(135deg, #00f2fe, #4facfe, #6366f1, #a855f7);
-            --btn-gradient: linear-gradient(90deg, #2563eb, #7c3aed);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danumes Messenger — Скачать</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
 
-        body {
-            background-color: var(--bg-base);
-            color: var(--text-white);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
+    /* Фон */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 20% 50%, rgba(74, 158, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(120, 80, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(0, 200, 200, 0.04) 0%, transparent 50%),
+        #0a0a0f;
+      z-index: -1;
+    }
 
-        /* Интерактивные живые неоновые туманности на фоне */
-        .glow-sphere-1 {
-            position: absolute;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 900px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.05) 50%, rgba(0,0,0,0) 80%);
-            z-index: 0;
-            pointer-events: none;
-        }
+    .container {
+      width: 100%;
+      max-width: 480px;
+      padding: 40px 24px;
+      text-align: center;
+    }
 
-        .glow-sphere-2 {
-            position: absolute;
-            bottom: -150px;
-            right: -100px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, rgba(0,0,0,0) 70%);
-            z-index: 0;
-            pointer-events: none;
-        }
+    /* Логотип */
+    .logo {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #4a9eff, #6c5ce7);
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin: 0 auto 24px;
+      box-shadow: 0 20px 60px rgba(74, 158, 255, 0.3);
+      animation: float 3s ease-in-out infinite;
+    }
 
-        /* Навигационная панель (Header) */
-        header {
-            width: 100%;
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 30px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
 
-        .logo-header {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: -1px;
-            background: var(--max-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #4a9eff, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-        .btn-top-launch {
-            padding: 10px 22px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.02);
-            color: var(--text-white);
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: background 0.3s, border-color 0.3s;
-        }
+    .subtitle {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
 
-        .btn-top-launch:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
+    /* Карточки функций */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
 
-        /* Секция Hero с выравниванием по центру */
-        .hero {
-            max-width: 1140px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 80px 24px 60px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            z-index: 5;
-        }
+    .feature-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      transition: transform 0.2s, border-color 0.2s;
+    }
 
-        .promo-badge {
-            background: rgba(99, 102, 241, 0.08);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #c7d2fe;
-            margin-bottom: 24px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+    .feature-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(74, 158, 255, 0.3);
+    }
 
-        /* ОГРОМНЫЙ ЛОГОТИП СТРОГО ПОСЕРЕДИНЕ */
-        .main-logo-centered {
-            font-size: 96px;
-            font-weight: 900;
-            line-height: 1;
-            letter-spacing: -3px;
-            background: var(--max-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.2));
-        }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
 
-        /* АККУРАТНЫЙ НОРМАЛЬНЫЙ ШРИФТ ДЛЯ ПОДРОБНОСТЕЙ */
-        .main-details-text {
-            font-size: 16px;
-            font-weight: 400;
-            color: var(--text-gray);
-            max-width: 580px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            letter-spacing: -0.1px;
-        }
+    .feature-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
 
-        /* Кнопка входа */
-        .btn-web-version {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 46px;
-            font-size: 17px;
-            font-weight: 700;
-            color: var(--text-white);
-            background: var(--btn-gradient);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 10px 35px rgba(37, 99, 235, 0.35);
-            transition: transform 0.2s, box-shadow 0.3s, filter 0.3s;
-            margin-bottom: 40px;
-        }
+    .feature-desc {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+      line-height: 1.3;
+    }
 
-        .btn-web-version:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(124, 58, 237, 0.5);
-            filter: brightness(1.1);
-        }
+    /* Кнопка скачивания */
+    .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, #4a9eff, #6c5ce7);
+      border: none;
+      border-radius: 18px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 10px 40px rgba(74, 158, 255, 0.3);
+      margin-bottom: 16px;
+    }
 
-        .btn-web-version svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-            transition: transform 0.2s;
-        }
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 50px rgba(74, 158, 255, 0.4);
+    }
 
-        .btn-web-version:hover svg {
-            transform: translateX(4px);
-        }
+    .download-btn:active {
+      transform: scale(0.97);
+    }
 
-        /* Премиум Bento Сетка фичей */
-        .bento-container {
-            max-width: 1140px;
-            width: 100%;
-            margin: 20px auto 80px auto;
-            padding: 0 24px;
-            position: relative;
-            z-index: 5;
-        }
+    .download-icon {
+      font-size: 1.4rem;
+    }
 
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+    .version {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
 
-        .bento-card {
-            background: var(--card-glass);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 32px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            transition: border-color 0.3s, background 0.3s, transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-        }
+    /* Ссылки */
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
 
-        .bento-card:hover {
-            border-color: rgba(99, 102, 241, 0.25);
-            background: rgba(255, 255, 255, 0.02);
-            transform: translateY(-2px);
-        }
+    .links a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
 
-        .bento-card.wide {
-            grid-column: span 2;
-        }
+    .links a:hover {
+      color: #4a9eff;
+    }
 
-        .card-header-block h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-        }
-
-        .card-header-block p {
-            font-size: 14px;
-            color: var(--text-gray);
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
-
-        /* Живой макет чата */
-        .live-chat-mockup {
-            width: 100%;
-            height: 190px;
-            background: #070a12;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            overflow: hidden;
-            display: flex;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-        }
-
-        .mock-sidebar {
-            width: 130px;
-            background: #0a0f1e;
-            border-right: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            text-align: left;
-        }
-
-        .mock-title {
-            font-size: 12px;
-            font-weight: 800;
-            background: var(--max-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .mock-user {
-            background: rgba(255, 255, 255, 0.04);
-            padding: 6px 8px;
-            border-radius: 8px;
-            font-size: 11px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .mock-user.active {
-            background: rgba(99, 102, 241, 0.15);
-            border-color: rgba(99, 102, 241, 0.3);
-            font-weight: 600;
-        }
-
-        .mock-main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mock-chat-header {
-            padding: 10px 14px;
-            background: #0a0f1e;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 11px;
-            font-weight: 600;
-            text-align: left;
-        }
-
-        .mock-chat-body {
-            flex: 1;
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            font-size: 11px;
-            text-align: left;
-        }
-
-        .mock-msg {
-            max-width: 75%;
-            padding: 8px 12px;
-            border-radius: 10px;
-            line-height: 1.4;
-        }
-
-        .mock-msg.received {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-
-        .mock-msg.sent {
-            background: #6366f1;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-        }
-
-        .bento-icon {
-            color: #6366f1;
-            margin-bottom: 16px;
-        }
-
-        .bento-card:hover .bento-icon {
-            color: #a855f7;
-        }
-
-        .bento-card::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--max-gradient);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .bento-card:hover::after {
-            opacity: 1;
-        }
-
-        /* Подвал */
-        footer {
-            width: 100%;
-            max-width: 1140px;
-            margin: auto auto 0 auto;
-            padding: 40px 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-gray);
-            font-size: 14px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .footer-brand {
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        /* Адаптивность */
-        @media (max-width: 900px) {
-            .bento-grid { grid-template-columns: 1fr; }
-            .bento-card.wide { grid-column: span 1; }
-            .main-logo-centered { font-size: 64px; }
-            .main-details-text { font-size: 14px; padding: 0 10px; }
-            header { padding: 20px; }
-        }
-    </style>
+    /* Мобильная адаптация */
+    @media (max-width: 400px) {
+      .container {
+        padding: 24px 16px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .logo {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+        border-radius: 22px;
+      }
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="bg"></div>
 
-    <div class="glow-sphere-1"></div>
-    <div class="glow-sphere-2"></div>
+  <div class="container">
+    <!-- Логотип -->
+    <div class="logo">💬</div>
 
-    <!-- Шапка (Ссылки ИСПРАВЛЕНЫ) -->
-    <header>
-        <a href="#" class="logo-header">DanuMes</a>
-        <a href="https://danumes.onrender.com/" target="_blank" class="btn-top-launch">Открыть Web</a>
-    </header>
+    <!-- Заголовок -->
+    <h1>Danumes</h1>
+    <p class="subtitle">
+      Современный мессенджер с группами, каналами, голосовыми и видеосообщениями.
+      Бесплатно и без рекламы.
+    </p>
 
-    <!-- Главная секция -->
-    <main class="hero">
-        <div class="promo-badge">Платформа v2.0</div>
-        
-        <!-- ЦЕНТРАЛЬНЫЙ КРУПНЫЙ ЛОГОТИП -->
-        <h1 class="main-logo-centered">DanuMes</h1>
-        
-        <!-- ИСПРАВЛЕННЫЙ ТЕКСТ ПОДРОБНОСТЕЙ -->
-        <p class="main-details-text">
-            Создавайте группы, общайтесь без ограничений и полностью контролируйте свои данные. Современный и красивый мессенджер с Bento-дизайном, созданный для удобного обмена сообщениями и комфортной работы с друзьями в любое время.
-        </p>
+    <!-- Функции -->
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <div class="feature-title">Чаты</div>
+        <div class="feature-desc">Личные и групповые переписки</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📢</div>
+        <div class="feature-title">Каналы</div>
+        <div class="feature-desc">Публичные каналы для всех</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎤</div>
+        <div class="feature-title">Голосовые</div>
+        <div class="feature-desc">Запись и отправка аудио</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎥</div>
+        <div class="feature-title">Видео</div>
+        <div class="feature-desc">Кружочки как в Telegram</div>
+      </div>
+    </div>
 
-        <!-- КНОПКА ВХОДА В ВЕБ-ВЕРСИЮ (Ссылки ИСПРАВЛЕНЫ) -->
-        <a href="https://danumes.onrender.com/" target="_blank" class="btn-web-version">
-            <span>Войти в веб-версию</span>
-            <svg viewBox="0 0 24 24">
-                <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42 5.43 5.43H5v2z"/>
-            </svg>
-        </a>
-    </main>
+    <!-- Кнопка скачивания -->
+    <a href="/Danumes.apk" class="download-btn" download>
+      <span class="download-icon">📱</span>
+      Скачать для Android
+    </a>
 
-    <!-- Презентация Bento Grid -->
-    <section class="bento-container">
-        <div class="bento-grid">
-            
-            <!-- Живая Bento-модель чата -->
-            <div class="bento-card wide">
-                <div class="card-header-block">
-                    <h3>Стильный темный дизайн</h3>
-                    <p>Красивый и удобный интерфейс, в котором всё на виду. Экраны чатов и списки друзей аккуратно разложены по полочкам, чтобы вам было комфортно переписываться с телефона или компьютера.</p>
-                </div>
-                
-                <div class="live-chat-mockup">
-                    <div class="mock-sidebar">
-                        <div class="mock-title">DanuMes</div>
-                        <div class="mock-user">👥 Разработчики</div>
-                        <div class="mock-user active">🤖 Создатель</div>
-                    </div>
-                    <div class="mock-main">
-                        <div class="mock-chat-header">🤖 Создатель</div>
-                        <div class="mock-chat-body">
-                            <div class="mock-msg received">Привет! Как работает обновленный мессенджер?</div>
-                            <div class="mock-msg sent">Привет! Всё супер, Bento верстка и пробел работают идеально.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <p class="version">Версия 1.0 • 5.2 MB • Android 7.0+</p>
 
-            <!-- Группы -->
-            <div class="bento-card">
-                <div class="card-header-block">
-                    <svg class="bento-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    <h3>Удобные группы</h3>
-                    <p>Собирайте команды и создавайте общие каналы за пару кликов. Приглашайте друзей из общего списка участников и координируйте любые задачи.</p>
-                </div>
-            </div>
-
-            <!-- Безопасность -->
-            <div class="bento-card">
-                <div class="card-header-block">
-                    <svg class="bento-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    <h3>Постоянный доступ</h3>
-                    <p>Ваша сессия всегда остается активной. Мессенджер надежно запоминает аккаунт на вашем устройстве, избавляя от необходимости постоянно вводить пароль заново.</p>
-                </div>
-            </div>
-
-            <!-- Быстродействие -->
-            <div class="bento-card wide">
-                <div class="card-header-block">
-                    <svg class="bento-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                    <h3>Мгновенный отклик</h3>
-                    <p>Общайтесь без задержек и долгих ожиданий. Сообщения доставляются мгновенно, а само приложение открывается на полную скорость на любом современном смартфоне.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Подвал -->
-    <footer>
-        <div><span class="footer-brand">DanuMes Ecosystem</span> — Свобода общения.</div>
-        <div>2026 Все права защищены</div>
-    </footer>
-
+    <!-- Ссылки -->
+    <div class="links">
+      <a href="https://danumes.onrender.com" target="_blank">Веб-версия</a>
+      <a href="https://github.com/dmalahovev-lab/danumes-messenger" target="_blank">GitHub</a>
+      <a href="mailto:support@danumes.app">Поддержка</a>
+    </div>
+  </div>
 </body>
 </html>
